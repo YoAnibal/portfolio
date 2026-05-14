@@ -675,9 +675,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelector('.hero-cta').addEventListener('click', function () {
     window.dataLayer.push({
       event: 'cta_click',
-      cta_text: this.innerText,
-      cta_location: 'hero',
-      cta_url: this.href
+      cta: {
+        text: this.innerText,
+        location: 'hero',
+        url: this.href
+      }
     });
   });
 </script>
