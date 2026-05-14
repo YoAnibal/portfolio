@@ -669,6 +669,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     el.style.transitionDelay = (i % 4) * 0.08 + 's';
     observer.observe(el);
   });
+// Evento DataLayer para el CTA principal
+  window.dataLayer = window.dataLayer || [];
+
+  document.querySelector('.hero-cta').addEventListener('click', function () {
+    window.dataLayer.push({
+      event: 'cta_click',
+      cta_text: this.innerText,
+      cta_location: 'hero',
+      cta_url: this.href
+    });
+  });
 </script>
 </body>
 </html>
